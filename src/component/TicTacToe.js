@@ -57,14 +57,14 @@ class TicTacToe extends Component {
         const history = this.state.history;
         const current = history[this.state.stepNumber]
         const winner = calculateWinner(current.squares)
-        let status
+        let status = "Welcome to Tic-Tac-Toe"
         if(winner){
             status = "🎉🎉Congratulations winner is " + winner + " 🎉🎉"
             setTimeout(() => {
                 alert("Winner is " + winner)
             }, 100);
         }
-        else {
+        else if(!winner){
             status = "Next Player is " + (this.state.xIsNext?'1':'0')
         }
 
